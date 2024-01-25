@@ -3,113 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>NT Cosmetics</title>
-    <link rel="stylesheet" href="OnlineShopping.css">
-    <script src="https://kit.fontawesome.com/41141eb064.js" crossorigin="anonymous"></script>
-
-
+    <title>Register Form</title>
+    
+    <link rel="stylesheet" href="Register.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </head>
 <body>
-    <section id="header">
-    <a href="#">
-            <img src="download.png" class="logo" alt=""> 
-        </a>
-           <div>
-               <ul id="navbar">
-                   <li><a  href="OnlineShopping.html">Home</a></li>
-                   <li><a href="shop.html">Shop</a></li>
-                   <li><a href="about.html">About</a></li>
-                   <li><a href="contact.html">Contact</a></li>
-                   <li><a class="active" href="login.html">Login</a></li>
-                   <li><a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
-               </ul>
-           </div>
-           <div id="mobile">
-                <a href="cart.html"><i class="fa fa-shopping-cart"></i></a>   
-                <i id="bar" class="fas fa-outdent">
-               </i>
-           </div>
-          
-       </section>
-    <div class = "container3">
+    
+   
+    <div class="contaiinner">
         <div class="form-box">
-            <h1 id="title">Sign Up</h1>
-            <form>
-                <div class = "input-group">
-                    <div class = "input-field" id="nameField">
-                        <i class="fa-solid fa-user"></i>
-                    <input type="text" placeholder="Name">
-                    </div>
-
-                    <div class = "input-field">
-                        <i class="fa-solid fa-envelope"></i>
-                    <input type="email" placeholder="Email">
-                    </div>
-
-                    <div class = "input-field">
-                        <i class="fa-solid fa-lock"></i>
-                    <input type="password" placeholder="Password">
-                    </div>
-                    <p>Lost Password <a href="#">Click Here!</a></p>
+            <form action="" name="Formfill" onsubmit="return validation()">
+                <h2>Register</h2>
+                <p id="result"></p>
+                <div class="input-box">
+                    <i class='bx bxs-user'></i>
+                    <input type="text"  name="Username"  placeholder="Username">
                 </div>
-                <div class="btn-field">
-                    <button type="button" id="signupBtn">Sign up</button>
-                    <button type="button" id="signinBtn" class="disable">Sign in</button>
+                <div class="input-box">
+                    <i class='bx bxs-envelope' ></i>
+                    <input type="email"  name="Email"  placeholder="Email">
                 </div>
+                <div class="input-box">
+                    <i class='bx bxs-lock-alt'></i>
+                    <input type="password"  name="Password"  placeholder="Password">
+                </div>
+                <div class="input-box">
+                    <i class='bx bxs-lock-alt'></i>
+                    <input type="password"  name="cPassword"  placeholder="Confirm Password">
+                </div>
+                <div class="button">
+                    <input type="submit" class="btn" onclick="validation()" value="Register">
+                </div>
+                <div class="group">
+                    <span><a href="#">Forget-Password</a></span>
+                    <span><a href="loginn.html">Login</a></span>
+                </div>
+                
+
             </form>
         </div>
-    </div>
-  <div class="col">
-        <h4>About</h4>
-        <a href="#">About Us</a>
-        <a href="#">Delivery Information</a>
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms & Conditions</a>
-        <a href="#">Contact Us</a>
-    </div>
-    <div class="col">
-        <h4>My Account</h4>
-        <a href="#">Sign In</a>
-        <a href="#">View Cart</a>
-        <a href="#">My Wishlist</a>
-        <a href="#">Track My Order</a>
-        <a href="#">Help</a>
-    </div>
-    <div class="col install">
-        <h4>Install App</h4>
-        <p>From App Store or Google Play</p>
-        <div class="row">
-            <img src="https://github.com/tech2etc/Build-and-Deploy-Ecommerce-Website/blob/main/img/pay/app.jpg?raw=true" alt="">
-            <img src="https://github.com/tech2etc/Build-and-Deploy-Ecommerce-Website/blob/main/img/pay/play.jpg?raw=true" alt="">
+        <div class="popup" id="popup">
+            <ion-icon name="checkmark-circle-outline"></ion-icon>
+            <h2>Thank you!</h2>
+            <p>You were Registred Sucessfully</p>
+            <a href="loginn.html"><button onclick="CloseSlide()">OK</button></a>
         </div>
-        <p>Secured Payment Gateways</p>
-        <img src="https://github.com/tech2etc/Build-and-Deploy-Ecommerce-Website/blob/main/img/pay/pay.png?raw=true" alt="">
-
     </div>
-
-    <div class="copyright">
-        <p>@ 2023, Tech2 etc - HTML CSS NT Cosmetics</p>
-    </div>
-  </footer>
-    <script>
-        let signupBtn = document.getElementById("signupBtn");
-        let signinBtn = document.getElementById("signinBtn");
-        let nameField = document.getElementById("nameField");
-        let title = document.getElementById("title");
-
-
-        signinBtn.onclick = function(){
-            nameField.style.maxHeight = "0";
-            title.innerHTML = "Sign In";
-            signupBtn.classList.add("disable");
-            signinBtn.classList.remove("disable");
-        }
-        signupBtn.onclick = function(){
-            nameField.style.maxHeight = "60px";
-            title.innerHTML = "Sign Up";
-            signupBtn.classList.remove("disable");
-            signinBtn.classList.add("disable");
-        }
-    </script>
+    <script src="Register.js"></script>  
+    <script src="OnlineShopping.html"></script>
+  
 </body>
 </html>
